@@ -23,6 +23,16 @@ class App extends Component {
         this.setState({counters});
     };
 
+     handleDecrement = counter => {
+      //  console.log(counter);
+        // this.setState({value : this.props.counter.value + 1 });
+        const counters = [...this.state.counters];
+        const index = counters.indexOf(counter);
+        counters[index] = {...counter};
+        counters[index].value--;
+        this.setState({counters});
+    };
+
     handleAdd = () => {
       let id = this.state.index + 1;
         
